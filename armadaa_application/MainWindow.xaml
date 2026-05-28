@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:armadaa_application"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Dashboard" Height="450" Width="800"
+        >
 
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0 , 0" EndPoint="1 , 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0" Color="#A36A00"></GradientStop>
+                <GradientStop  Offset="0.5" Color="#FFB62E" />
+                <GradientStop Offset="1" Color="#FFC65C" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>  
+    <StackPanel Grid.Column="2">
+        
+    </StackPanel>
     </Grid>
+
 </Window>
