@@ -8,7 +8,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="Dashboard" Height="450" Width="800"
+        Title="Dashboard" Height="600" Width="1000"
         >
 
     <Window.Background>
@@ -26,10 +26,16 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition>
             </ColumnDefinition>
-        </Grid.ColumnDefinitions>  
-    <StackPanel Grid.Column="2">
-        
-    </StackPanel>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="2" Width="300" Margin="0,0,160,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Jelentkezz be" Margin="5,160,0,20" FontSize="25"></TextBlock>
+            <TextBox x:Name="usernameTbx" Height="30" Margin="0,0,0,20" FontSize="20"></TextBox>
+            <PasswordBox x:Name="passwordTbx" Height="30" Margin="0,0,0,20" FontSize="20"></PasswordBox>
+            <Button x:Name="loginBtn" BorderThickness="1" BorderBrush="White" Background="Orange" Click="loginBtn_Click" Height="30" Margin="0,0,0,5" Content="Bejelentkezés" FontSize="20"></Button>
+            <Button x:Name="toRegButton" Click="toRegButton_Click" Margin="0,0,0,180" Height="20" Width="100" BorderThickness="0" Content="Regisztráció" FontWeight="Bold" Background="Transparent"  Foreground="Black"></Button>
+            <Button x:Name="exit" Click="exit_Click" BorderThickness="0" Background="DarkRed" Foreground="White" Content="Exit" Width="100"></Button>
+            
+        </StackPanel>
     </Grid>
 
 </Window>

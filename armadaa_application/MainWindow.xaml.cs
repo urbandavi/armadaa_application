@@ -20,5 +20,20 @@ namespace armadaa_application
         {
             InitializeComponent();
         }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void toRegButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
