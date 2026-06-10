@@ -9,12 +9,12 @@ namespace armadaa_application.Model
 {
     class User
     {
-        public User(string vezeteknev, string keresztnev, string felhasznalonev, string password, string email)
+        public User(string username, string password, string email)
         {
-            Vezeteknev = vezeteknev;
-            Keresztnev = keresztnev;
-            Felhasznalonev = felhasznalonev;
+           
+          
             Password = password;
+            Username = username;
             Email = email;
         }
         public User()
@@ -23,10 +23,9 @@ namespace armadaa_application.Model
         }
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Vezeteknev { get; set; }
-        public string Keresztnev { get; set; }
-        public string Felhasznalonev { get; set; }
+
         public string Password { get; set; }
+        public string Username { get; set; }
         public string Email { get; set; }
     }
 }

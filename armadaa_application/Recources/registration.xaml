@@ -26,9 +26,7 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="2" Width="300" Margin="0,0,160,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Jelentkezz be" Margin="5,80,0,20" FontSize="25"></TextBlock>
-            <TextBox x:Name="vezeteknevTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="Vezeténév"></TextBox>
-            <TextBox x:Name="keresztnevTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="Keresztnév"></TextBox>
+            <TextBlock Text="REgisztrálj" Margin="5,80,0,20" FontSize="25"></TextBlock>
             <TextBox x:Name="usernameTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="FElhsználónév"></TextBox>
             <TextBox x:Name="emailTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="E-mail cím"></TextBox>
 
