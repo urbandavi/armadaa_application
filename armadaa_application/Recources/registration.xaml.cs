@@ -23,5 +23,20 @@ namespace armadaa_application.Recources
         {
             InitializeComponent();
         }
+
+        private void regBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void toLoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using armadaa_application.Recources;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -28,12 +29,14 @@ namespace armadaa_application
 
         private void toRegButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var regpage = new registration();
+            regpage.ShowDialog();
+            this.Close();
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            App.Current.Shutdown();
         }
     }
 }

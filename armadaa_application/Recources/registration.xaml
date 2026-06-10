@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:armadaa_application.Recources"
         mc:Ignorable="d"
-        Title="registration" Height="450" Width="800">
+         WindowStyle="None"
+ WindowStartupLocation="CenterScreen"
+ ResizeMode="NoResize"
+ Title="Dashboard" Height="700" Width="1000">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0 , 0" EndPoint="1 , 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0" Color="#A36A00"></GradientStop>
+                <GradientStop  Offset="0.5" Color="#FFB62E" />
+                <GradientStop Offset="1" Color="#FFC65C" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="2" Width="300" Margin="0,0,160,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Jelentkezz be" Margin="5,80,0,20" FontSize="25"></TextBlock>
+            <TextBox x:Name="vezeteknevTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="Vezeténév"></TextBox>
+            <TextBox x:Name="keresztnevTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="Keresztnév"></TextBox>
+            <TextBox x:Name="usernameTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="FElhsználónév"></TextBox>
+            <TextBox x:Name="emailTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="E-mail cím"></TextBox>
+
+            <TextBlock Text="Jelszó" Margin="5,0,0,10" FontSize="20"></TextBlock>
+            <PasswordBox x:Name="passwordTbx" Height="30" Margin="0,0,0,10" FontSize="20"></PasswordBox>
+            <TextBlock Text="Jelszó ismét" Margin="5,0,0,10" FontSize="20"></TextBlock>
+            <PasswordBox x:Name="passwordAgainTbx" Height="30" Margin="0,0,0,10" FontSize="20"></PasswordBox>
+            <Button x:Name="regBtn" BorderThickness="1"  BorderBrush="#FFF6E6" Background="Orange" Click="regBtn_Click" Height="35" Margin="0,0,0,5" Content="Bejelentkezés" FontSize="20"></Button>
+            <Button x:Name="toLoginBtn" Click="toLoginBtn_Click" Margin="0,0,0,70" Height="20" Width="100" BorderThickness="0" Content="Regisztráció" FontWeight="Bold" Background="Transparent"  Foreground="Black"></Button>
+            <Button x:Name="exit" Click="exit_Click" BorderThickness="0" Background="DarkRed" Foreground="White" Content="Exit" Width="100"></Button>
+
+        </StackPanel>
     </Grid>
 </Window>
