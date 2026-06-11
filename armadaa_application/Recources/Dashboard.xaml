@@ -10,8 +10,8 @@
         Background="Black"
         Title="Dashboard" Height="450" Width="1500">
     <StackPanel Orientation="Horizontal">
-        
-    <StackPanel Margin="250,20,0,0" Width="300">
+        <Button Content="Exit" Width="50" FontSize="25" Height="50" Margin="20" Click="Button_Click"></Button>
+    <StackPanel Margin="230,20,0,0" Width="300">
         <Button Content="Create Product" Margin="0,20,0,0" Width="300" FontSize="25" x:Name="Create_Product" Click="Create_Product_Click"></Button>
         <TextBlock Text="Termék neve" Foreground="White" FontSize="25" Margin="10"></TextBlock>
         <TextBox FontSize="25" x:Name="termek_nev_tbx"></TextBox>
@@ -49,5 +49,7 @@
             </ListBox>
             <Button Height="40" Content="Get all costumers" FontSize="25" Margin="10" x:Name="getAllVasarlo" Click="getAllVasarlo_Click"></Button>
         </StackPanel>
+        
     </StackPanel>
+    
 </Window>

@@ -64,8 +64,8 @@ namespace armadaa_application.Recources
             using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
             {
                 var CostumerRepo = new GenericRepository<Costumer>(App.databasePath);
-                var GetAllProducts = CostumerRepo.GetAll();
                 connection.CreateTable<Costumer>();
+                var GetAllProducts = CostumerRepo.GetAll();
                 vasarlok.Items.Add("Vasarlo neve || Ár");
                 foreach (Costumer costumer in GetAllProducts)
                 {
@@ -91,6 +91,11 @@ namespace armadaa_application.Recources
                     MessageBox.Show($"A {costNeam} vásárló sikeresen hozzá lett adva az adatbázishoz");
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }
