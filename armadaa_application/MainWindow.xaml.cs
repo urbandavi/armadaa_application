@@ -43,8 +43,8 @@ namespace armadaa_application
                         // jelszóellenőrzés
                         if (user.Jelszo == passwordHash)
                         {
-                            MainWindow mainWindow = new MainWindow();
-                            mainWindow.Show();
+                            Dashboard dashboard = new Dashboard();
+                            dashboard.Show();
                             this.Close();
                         }
                         else

@@ -23,5 +23,10 @@ namespace armadaa_application.Recources
         {
             InitializeComponent();
         }
+
+        private void Create_Product_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
