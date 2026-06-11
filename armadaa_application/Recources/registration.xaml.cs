@@ -1,5 +1,6 @@
 ﻿using armadaa_application.Model;
 using armadaa_application.Services;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,31 @@ namespace armadaa_application.Recources
 
         private void regBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            string username = usernameTbx.Text;
+            string email = emailTbx.Text;
+            string password = PasswordHelper.HashPassword(passwordTbx.Password);
+            string passwordAgain = PasswordHelper.HashPassword(passwordAgainTbx.Password);
+
+
+            if (!string.IsNullOrEmpty(usernameTbx.Text) && !string.IsNullOrEmpty(emailTbx.Text) && !string.IsNullOrEmpty(passwordTbx.Password) && !string.IsNullOrEmpty(passwordAgainTbx.Password))
+            {
+                using(SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+                {
+                    Felhasznalo account = new Felhasznalo(username, email, password);
+
+                    if (account.Jelszo == passwordAgain)
+                    {
+                        connection.CreateTable<Felhasznalo>();
+                        connection.Insert(account);
+                        Dashboard dashboard= new Dashboard();
+                        dashboard.Show();
+                        this.Close();
+                    }
+                    else {
+                        MessageBox.Show("A jelszavak nem egyeznek.");
+                    }
+                }
+            }
 
         }
 

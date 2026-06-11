@@ -20,7 +20,7 @@ namespace armadaa_application.Model
         {
         }
 
-        public Felhasznalo(string felhasznaloNev, string emailcim, string jelszo, int szerepkor)
+        public Felhasznalo(string felhasznaloNev, string emailcim, string jelszo)
         {
             FelhasznaloNev = felhasznaloNev;
             Emailcim = emailcim;

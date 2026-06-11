@@ -26,15 +26,17 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="2" Width="300" Margin="0,0,160,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="REgisztrálj" Margin="5,80,0,20" FontSize="25"></TextBlock>
-            <TextBox x:Name="usernameTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="FElhsználónév"></TextBox>
-            <TextBox x:Name="emailTbx" Height="30" Margin="0,0,0,20" FontSize="20" Text="E-mail cím"></TextBox>
+            <TextBlock Text="Regisztrálj" Margin="5,80,0,20" FontSize="25"></TextBlock>
+            <TextBlock Text="Felhasználónév" Margin="5,0,0,10" FontSize="20"></TextBlock>
+            <TextBox x:Name="usernameTbx" Height="30" Margin="0,0,0,20" FontSize="20" ></TextBox>
+            <TextBlock Text="E-mail cím" Margin="5,0,0,10" FontSize="20"></TextBlock>
+            <TextBox x:Name="emailTbx" Height="30" Margin="0,0,0,20" FontSize="20"></TextBox>
 
             <TextBlock Text="Jelszó" Margin="5,0,0,10" FontSize="20"></TextBlock>
             <PasswordBox x:Name="passwordTbx" Height="30" Margin="0,0,0,10" FontSize="20"></PasswordBox>
             <TextBlock Text="Jelszó ismét" Margin="5,0,0,10" FontSize="20"></TextBlock>
             <PasswordBox x:Name="passwordAgainTbx" Height="30" Margin="0,0,0,10" FontSize="20"></PasswordBox>
-            <Button x:Name="regBtn" BorderThickness="1"  BorderBrush="#FFF6E6" Background="Orange" Click="regBtn_Click" Height="35" Margin="0,0,0,5" Content="Bejelentkezés" FontSize="20"></Button>
+            <Button x:Name="regBtn" BorderThickness="1"  BorderBrush="#FFF6E6" Background="Orange" Click="regBtn_Click" Height="35" Margin="0,0,0,5" Content="Regisztráció" FontSize="20"></Button>
             <Button x:Name="toLoginBtn" Click="toLoginBtn_Click" Margin="0,0,0,70" Height="20" Width="100" BorderThickness="0" Content="Regisztráció" FontWeight="Bold" Background="Transparent"  Foreground="Black"></Button>
             <Button x:Name="exit" Click="exit_Click" BorderThickness="0" Background="DarkRed" Foreground="White" Content="Exit" Width="100"></Button>
 
