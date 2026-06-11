@@ -1,5 +1,5 @@
 ﻿using armadaa_application.Model;
-using eKreta.Services;
+using armadaa_application.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,38 +28,7 @@ namespace armadaa_application.Recources
 
         private void regBtn_Click(object sender, RoutedEventArgs e)
         {
-            string userName = usernameTbx.Text;
-            string email = emailTbx.Text;
-
-            string passwordHash = PasswordHelper.HashPassword(passwordTbx.Password);
-            string passwordAgainHash = PasswordHelper.HashPassword(passwordAgainTbx.Password);
-
-            if (!string.IsNullOrEmpty(usernameTbx.Text) || !string.IsNullOrEmpty(passwordAgainTbx.Password)||!string.IsNullOrEmpty(passwordTbx.Password)||!string.IsNullOrEmpty(emailTbx.Text))
-            {
-                using (SQLite.SQLiteConnection connection = new SQLite.SQLiteConnection(App.databasePath))
-                {
-
-                    connection.CreateTable<User>();
-                    var user = connection.Table<User>().FirstOrDefault(u => u.Username == userName);
-
-                    //Ha van ilyen felhasználó
-                    
-                        if (passwordHash == passwordAgainHash) { 
-                        
-                        var UserRepo = new GenericRepository<User>(App.databasePath);
-                        var registreredUser = new User(passwordHash, userName, email);
-                        UserRepo.insert(registreredUser);
-                         Dashboard dashboard = new Dashboard();
-                            dashboard.Show();
-                            this.Close();
-                        }
-                    
-                    else
-                    {
-                        MessageBox.Show("Regisztráció Sikeretelen");
-                    }
-                }
-            }
+            
 
         }
 

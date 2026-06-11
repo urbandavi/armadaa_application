@@ -1,6 +1,6 @@
 ﻿using armadaa_application.Model;
 using armadaa_application.Recources;
-using eKreta.Services;
+using armadaa_application.Services;
 using SQLite;
 using System.Text;
 using System.Windows;
@@ -31,9 +31,32 @@ namespace armadaa_application
             string userName = usernameTbx.Text;
             string passwordHash = PasswordHelper.HashPassword(passwordTbx.Password);
 
-            using(SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            if (!string.IsNullOrEmpty(usernameTbx.Text) || !string.IsNullOrEmpty(passwordTbx.Password))
             {
-               
+                using (SQLite.SQLiteConnection connection = new SQLite.SQLiteConnection(App.databasePath))
+                {
+                    var user = connection.Table<Felhasznalo>().FirstOrDefault(u => u.FelhasznaloNev == userName);
+
+                    //Ha van ilyen felhasználó
+                    if (user != null)
+                    {
+                        // jelszóellenőrzés
+                        if (user.Jelszo == passwordHash)
+                        {
+                            MainWindow mainWindow = new MainWindow();
+                            mainWindow.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Belépés megtagadva! ");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Belépés megtagadva! ");
+                    }
+                }
             }
         }
 
