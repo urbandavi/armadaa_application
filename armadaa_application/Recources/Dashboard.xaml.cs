@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using armadaa_application.Model;
+using eKreta.Models;
 using SQLite;
 
 namespace armadaa_application.Recources
@@ -46,7 +47,15 @@ namespace armadaa_application.Recources
 
         private void getAll_Click(object sender, RoutedEventArgs e)
         {
-
+            using(SQLiteConnection connection=new SQLiteConnection(App.databasePath)) 
+            {
+                var ProductsRepo = new GenericRepository<Products>(App.databasePath);
+                var GetAllProducts = ProductsRepo.GetAll();
+                productsLBX.Items.Add("Termék neve || Ár");
+                foreach (Products Product in GetAllProducts) {
+                      productsLBX.Items.Add(Product.Termeknev+"     "+Product.TermekAr);
+                }
+            }
         }
     }
 }
