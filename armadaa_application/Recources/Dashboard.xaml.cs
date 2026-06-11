@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using armadaa_application.Model;
+using SQLite;
 
 namespace armadaa_application.Recources
 {
@@ -25,6 +27,24 @@ namespace armadaa_application.Recources
         }
 
         private void Create_Product_Click(object sender, RoutedEventArgs e)
+        {
+            int termekar = Convert.ToInt32(termekArTbx.Text); 
+            string termeknev = termek_nev_tbx.Text;
+
+            if(!string.IsNullOrEmpty(termek_nev_tbx.Text) && !string.IsNullOrEmpty(termekArTbx.Text))
+            {
+                Products product = new Products(termeknev, termekar);
+
+                using(SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+                {
+                    connection.CreateTable<Products>();
+                    connection.Insert(product);
+                    MessageBox.Show($"A {termeknev} termék sikeresen hozzá lett adva az adatbázishoz");
+                }
+            }
+        }
+
+        private void getAll_Click(object sender, RoutedEventArgs e)
         {
 
         }

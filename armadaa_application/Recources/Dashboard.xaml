@@ -8,9 +8,26 @@
         WindowState="Maximized"
         WindowStyle="None"  
         Background="Black"
-        Title="Dashboard" Height="450" Width="800">
-    <WrapPanel>
-        <Button Content="Create Product" Margin="20,20,20,0" Width="300" x:Name="Create_Product" Click="Create_Product_Click"></Button>
+        Title="Dashboard" Height="450" Width="1500">
+    <StackPanel Orientation="Horizontal">
         
-    </WrapPanel>
+    <StackPanel Margin="250,20,0,0" Width="300">
+        <Button Content="Create Product" Margin="0,20,0,0" Width="300" FontSize="25" x:Name="Create_Product" Click="Create_Product_Click"></Button>
+        <TextBlock Text="Termék neve" Foreground="White" FontSize="25" Margin="10"></TextBlock>
+        <TextBox FontSize="25" x:Name="termek_nev_tbx"></TextBox>
+        <TextBlock Text="Termék Ára" Foreground="White" FontSize="25" Margin="10"></TextBlock>
+        <TextBox FontSize="25" x:Name="termekArTbx"></TextBox>
+
+
+    </StackPanel>
+        <StackPanel>
+            <ListBox Margin="40,20,40,20"
+                     Width="200"
+                     Height="300"
+                     x:Name="productsLBX">
+                
+            </ListBox>
+            <Button Height="40" Content="Get all products" FontSize="25" x:Name="getAll" Click="getAll_Click"></Button>
+        </StackPanel>
+    </StackPanel>
 </Window>
