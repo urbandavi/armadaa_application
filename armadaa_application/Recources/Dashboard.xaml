@@ -30,22 +30,24 @@
             <Button Height="40" Content="Get all products" FontSize="25" x:Name="getAll" Click="getAll_Click"></Button>
         </StackPanel>
         <StackPanel Margin="60,20,0,0" Width="300">
-        <Button Content="register costumer" Margin="0,20,0,0" Width="300" FontSize="25" x:Name="registerVasarlo" Click="Create_Product_Click"></Button>
-        <TextBlock Text="Termék neve" Foreground="White" FontSize="25" Margin="10"></TextBlock>
+        <Button Content="Vásárló felvétele" Margin="0,20,0,0" Width="300" FontSize="25" x:Name="registerVasarlo" Click="registerVasarlo_Click"></Button>
+        <TextBlock Text="Vásárló neve" Foreground="White" FontSize="25" Margin="10"></TextBlock>
         <TextBox FontSize="25" x:Name="vasarloNev"></TextBox>
-        <TextBlock Text="Termék Ára" Foreground="White" FontSize="25" Margin="10"></TextBlock>
+        <TextBlock Text="Vásárló születési éve" Foreground="White" FontSize="25" Margin="10"></TextBlock>
         <TextBox FontSize="25" x:Name="vasarloSzulEv"></TextBox>
+        <TextBlock Text="Vásárló bankszámlaszáma" Foreground="White" FontSize="25" Margin="10"></TextBlock>
+        <TextBox FontSize="25" x:Name="Bankszamlaszama"></TextBox>
 
 
     </StackPanel>
         <StackPanel>
-            <ListBox Margin="40,20,40,20"
+            <ListBox Margin="45,20,40,20"
                      Width="200"
                      Height="300"
                      x:Name="vasarlok">
                 
             </ListBox>
-            <Button Height="40" Content="Get all products" FontSize="25" x:Name="getAllVasarlo" Click="getAll_Click"></Button>
+            <Button Height="40" Content="Get all products" FontSize="25" Margin="10" x:Name="getAllVasarlo" Click="getAllVasarlo_Click"></Button>
         </StackPanel>
     </StackPanel>
 </Window>

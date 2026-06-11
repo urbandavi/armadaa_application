@@ -50,10 +50,45 @@ namespace armadaa_application.Recources
             using(SQLiteConnection connection=new SQLiteConnection(App.databasePath)) 
             {
                 var ProductsRepo = new GenericRepository<Products>(App.databasePath);
+                connection.CreateTable<Products>();
                 var GetAllProducts = ProductsRepo.GetAll();
                 productsLBX.Items.Add("Termék neve || Ár");
                 foreach (Products Product in GetAllProducts) {
                       productsLBX.Items.Add(Product.Termeknev+"     "+Product.TermekAr);
+                }
+            }
+        }
+
+        private void getAllVasarlo_Click(object sender, RoutedEventArgs e)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            {
+                var CostumerRepo = new GenericRepository<Costumer>(App.databasePath);
+                var GetAllProducts = CostumerRepo.GetAll();
+                connection.CreateTable<Costumer>();
+                vasarlok.Items.Add("Vasarlo neve || Ár");
+                foreach (Costumer costumer in GetAllProducts)
+                {
+                    productsLBX.Items.Add(costumer.VasarloTeljesNeve + "     " + costumer.VasarloSzuletesiEve);
+                }
+            }
+        }
+
+        private void registerVasarlo_Click(object sender, RoutedEventArgs e)
+        {
+            string costNeam = vasarloNev.Text;
+            int szuletesiev = Convert.ToInt32(vasarloSzulEv.Text);
+            int bankszamlaszam = Convert.ToInt32(Bankszamlaszama.Text);
+
+            if (!string.IsNullOrEmpty(vasarloNev.Text) && !string.IsNullOrEmpty(vasarloSzulEv.Text) && !string.IsNullOrEmpty(Bankszamlaszama.Text))
+            {
+                Costumer costumer = new Costumer(costNeam,szuletesiev,bankszamlaszam);
+
+                using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+                {
+                    connection.CreateTable<Costumer>();
+                    connection.Insert(costumer);
+                    MessageBox.Show($"A {costNeam} vásárló sikeresen hozzá lett adva az adatbázishoz");
                 }
             }
         }

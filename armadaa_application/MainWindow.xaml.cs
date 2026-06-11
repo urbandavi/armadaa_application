@@ -35,6 +35,7 @@ namespace armadaa_application
             {
                 using (SQLite.SQLiteConnection connection = new SQLite.SQLiteConnection(App.databasePath))
                 {
+                    connection.CreateTable<Felhasznalo>();
                     var user = connection.Table<Felhasznalo>().FirstOrDefault(u => u.FelhasznaloNev == userName);
 
                     //Ha van ilyen felhasználó
