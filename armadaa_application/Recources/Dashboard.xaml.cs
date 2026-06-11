@@ -69,7 +69,7 @@ namespace armadaa_application.Recources
                 vasarlok.Items.Add("Vasarlo neve || Ár");
                 foreach (Costumer costumer in GetAllProducts)
                 {
-                    productsLBX.Items.Add(costumer.VasarloTeljesNeve + "     " + costumer.VasarloSzuletesiEve);
+                    vasarlok.Items.Add(costumer.VasarloTeljesNeve + "     " + costumer.VasarloSzuletesiEve);
                 }
             }
         }
